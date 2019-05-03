@@ -1,0 +1,82 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: rgba(10,10,10,.75);
+	color: white;
+	font-size: 75%;
+	font-family: sans-serif;
+	text-align: center;
+
+}
+
+input[type=radio]{
+	display: none;
+}
+
+.menu{
+	width: 100%;
+}
+
+label{
+	text-transform: uppercase;
+	display: block;
+	padding: 4em 0 1em;
+	background: center top no-repeat #563429;
+	z-index: 1;
+}
+
+	label[for=opcao-bolos]{
+		background-image: url(../imagens/icone-bolos.svg); 
+	}
+
+	label[for=opcao-bebidas]{
+		background-image: url(../imagens/icone-bebidas.svg); 
+	}
+
+	:checked + label{
+		background-color: #E48760;
+	}
+
+
+label{
+	width: 50%;
+	position: fixed;
+	bottom: 0;
+}
+
+	label[for=opcao-bolos]{
+		left: 0;
+	}
+	label[for=opcao-bebidas]{
+		right: 0;
+	}
+
+.menu{
+	margin-bottom: 3.8em;
+}
+
+html,
+body{
+	/*overflow-y: hidden;*/
+	overflow-x: hidden;
+	width: 100%;
+}
+
+.container-menus{
+	-webkit-transform: translateX(0);
+			transform: translateX(0);
+
+	-webkit-transition: transform 300ms ease-in;
+			transition: transform 300ms ease-in;
+
+	width: 200%;
+}
+
+.container-menus .menu{
+	width: 50%;
+	float: left;
+}
+
+#opcao-bebidas:checked ~ .container-menus{
+	-webkit-transform: translateX(-50%);
+}
